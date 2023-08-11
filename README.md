@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 13 with Drizzle ORM & PlanetScale Starter Template
 
-## Getting Started
+A robust starter template for Next.js 13, integrated with Drizzle ORM and PlanetScale. This template provides a quick and seamless option to get up and running quickly.
 
-First, run the development server:
+https://github.com/tuffstuff9/nextjs-serveraction-drizzle-starter/assets/57072903/38d5a66f-115c-4fd6-b841-80fa3556a02c
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌟 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **[Next.js App Router](https://nextjs.org/docs)**: The latest version of the popular React framework for server-rendered applications.
+- **[Drizzle ORM](https://drizzle-orm-link.com/docs)**: A modern and efficient ORM to manage database operations.
+- **[PlanetScale](https://planetscale.com/docs)**: A scalable and serverless relational database.
+- **[TailwindCSS](https://tailwindcss.com/docs)**: A utility-first CSS framework for rapid UI development.
+- **[Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions)**: Utilize the experimental features of Next.js for better server-side operations.
+- **[UseFormStatus](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions#experimental-useformstatus)**: An experimental hook to manage form states.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v14 or newer)
+- npm or Yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Setup
 
-## Deploy on Vercel
+See the accompanying [blog post](https://tuffstuff9.hashnode.dev/setting-up-drizzle-orm-with-planetscale-for-your-nextjs-13-app?ref=twitter-share) for a more detail overview. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/tuffstuff9/nextjs-serveraction-drizzle-starter.git
+    cd nextjs-serveraction-drizzle-starter
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. **Install Dependencies**
+   ```bash
+   yarn install
+   # or
+   npm install
+   ```
+
+3. **Setup Environment Variables**
+    - Create a .env file
+    - Set up your PlanetScale database and add the `DATABASE_URL` to the `.env` file. See [here](https://tuffstuff9.hashnode.dev/setting-up-drizzle-orm-with-planetscale-for-your-nextjs-13-app#heading-setting-up-planetscale) for further details on how to setup PlanetScale integration.
+    - Modify the copied connection string by replacing `?sslaccept=strict` with `?ssl={"rejectUnauthorized":true}`
+
+4. **Run Migrations**
+   ```bash
+   yarn drizzle-kit push:mysql
+   # or
+   npm run drizzle-kit push:mysql
+   ```
+
+5. **Start Development Server**
+   ```bash
+   yarn dev
+   # or
+   npm run dev
+   ```
+
+Now, you can open [http://localhost:3000](http://localhost:3000) in your browser to see your app in action!
+
+
+
+## 📃 License
+
+This project is [MIT](./LICENSE) licensed.
